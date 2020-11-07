@@ -1,0 +1,148 @@
+<script>
+    // Someday we have to  stop and ask ourself, what are you doing body???
+    // it's my first lesson in new method, I like it, it's just a inline comment
+    /* we can have a multi-line comments, too.
+    start with backslash and star
+    end by reverse this, star and backslash
+    it's so simple :)
+    */
+
+    // This is a bout Data Type:  I can't recognize "null" and "undefined" types, I hope at the end of this section, I take back my words
+    var a; // I think this log will an "undefined" and it's true, but why in course show "null"? console.log("undefined type is which one that has no set any value for it like 'a' but what is the fucking null?")
+
+    var b = 13;
+
+    var a = 7;
+    var b = a; // b eq 7
+
+
+    var a = "Marzi";
+    var b = a + 2; // Marzi2
+
+    let c = 3;
+    let d = c + a; //3Marzi
+
+    let e = d * 2; //NAN
+
+    let h = b * 2; //NAN
+
+    let f = 0 / 0; //NAN
+
+    var g = d / 0; //NAN
+
+    let i = 0 / d; //NAN
+
+    let j = 0 / 1; // 0
+
+    const l = 5; // l can't change at all
+
+
+    //example for starting called variables
+    var numbero = 9; // 9
+    var Numbero = 10; // 10
+
+    var $num = 2508; //2508
+    //I have to study more for find another kinds
+
+
+    //Case sensitive example
+    var SumOfNumbers = "this is for try Case sensitive";
+    SUMOFNUMBERS = 1110; // but I don't know why in course for something like that get undefined error massage but for me return 1110???
+
+    // increment AND  decrement
+    var y = 47;
+    y++ // eq to y = y + 1 or y += 1
+    y += 1;
+    console.log(y)
+
+
+    // example for compound 
+    y += 3; //eq to y = y + 3
+    y -= 3; //eq to y = y - 3
+    y *= 3; //eq to y = y * 3
+    y /= 3; //eq y = y / 3
+
+
+    //operation on numbers example
+    var xVar = 27;
+    var yVar = 35;
+    var sum = xVar + yVar // result is 62
+
+    var sub = xVar - yVar; //eq to (-8)
+
+    var multi = xVar * yVar; //eq to 945
+
+    var div = xVar / yVar; //eq to 0.771
+    var rem = xVar % yVar; //eq to 27
+    var remReverse = yVar % xVar; //eq to 8
+
+
+    //operation on Decimal numbers example
+    var zVar = 27.01;
+    var qVar = 35.05;
+    var sumDec = zVar + qVar // result is 62.06
+    console.log(sumDec)
+
+    var subDec = zVar - qVar; //eq to (-8.39)
+    console.log(subDec)
+
+    var multiDec = zVar * qVar; //eq to 946.7005
+    console.log(multiDec)
+
+    var divDec = zVar / qVar; //eq to 0.7706
+    console.log(divDec)
+
+    var remDec = zVar % qVar; //eq to 27.01
+    console.log(remDec)
+
+    var remReverseDec = qVar % xVar; //eq to 8.04
+
+    var zVar = 27.00;
+    var qVar = 35;
+    var sumDecimal = qVar + zVar; //eq to 62
+    var subDecimal = zVar - qVar; // eq  (-8) so  27.00 is just like a number not decimal number
+
+
+    //e.x for quote in string
+    var string1 = "it's daman marzyah"; // no any problem
+    var string2 = "it is \"first way\" for \"solve\" this problem";
+    var string3 = `"it is "second way" for \"resolve\" it";`
+    var string4 = `it's a way for "strings that contain both" double and single quote`
+    var string5 = 'and this is "third and best way" for "resolve" this problem'
+        // var string2 "it is " Marzyah ""; // Uncaught SyntaxError: unexpected token: string literal error
+
+
+    //Example for Escape Sequence
+    var escapes = "all Escapes will be explain there: "
+
+    console.log(k) // k is undefined
+
+
+    //###########################################################################################
+
+    /*
+    some important Notes:
+    1) we defined variables in JS by three ways: a) the first one is the use "var", b) second is use "let" and c) third one is "const".
+    2) when u used const one its means fix for ever, u can't change it in another place of ur code
+    3) I changed all of them from var to let, I got this massage error: "*Uncaught SyntaxError: redeclaration of let a, note: Previously declared at line 11, column 8*" 
+    so what means that??? means we can't use let for defined one variable and change it in somewhere??
+    4) u can't use "var" in some where and in another where use "let" for same variable
+    5)fifth point is about structure of variables, this variables(also function and class) are case sensitive means that Capitalization is matter,  there is a  difference between variable
+    that called "number" and another one that called "Number", if u have a two variable that called by one name, the second one will be overwrite and this one
+    accept but if u just change the first letter by capital this problem is solved, so I watch this part again and I think means of Case sensitive is some thing else:
+    u can have a two variables with same name but  different value just by use capital or small latter(u can making difference by this in their name)
+    but I think this isn't a good description for case sensitive, oh I'm wronnngggg, this point is about camelCase structure not that I explain,
+    so camelCase is like which one that I write "camelCase" meaning that when u wanna to called a variable with two or more part, u should written it like this: first letter is saml, first letter of each other words should be Capital.
+    6) I think I read in somewhere that variable can't be start with numbers, YEs, I tried and it's true
+    also can be start with an other mark??? expect "$" and emmmm I can't remember:/
+    7)do u defined a string variables with "double qout"? yes, I do... how a bout a string variable with double quote within(right inside the string)??
+    it's simple question, we have three ways: a) use backslash/ before a double quote in within string, b) set all string in back ticks(`this mark`) even string with single quote or double
+    ans 3) is set string in single quote.
+
+    8)we can do 4 original operation on numbers plus reminder(add+, sub-, multiplying*, dividing/, remainder%) and also we can incrementing(add one) and decrementing(sub one) a variable, show in example...
+    and we can try any one of this operation on decimal numbers, just see them in examples
+
+    9) for study about Escape Sequence in JS read the related examples
+
+    */
+</script>
