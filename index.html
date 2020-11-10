@@ -175,5 +175,68 @@
     var qqqqq = 5 + 2 + "2" + 5 + 2; // 72252 after string all of them treat such as string
     console.log(qqqqq)
 
-    console.log(k) // k is undefined
+    // Today is third days that I practice
+    // so I think I was confused a little, the document in w3school is so long:)
+    // but now, yes, I know how should I do it,
+    // I saw movie for three times till  min 40 and now write(coded) them but 
+    //To be sure I write any thing in document that I forget for previous lessons:
+    //GO back to  Arithmetic Operators, JavaScript Operator Precedence Values:
+    var t = 10;
+    ++t; // 11
+    t++; //12
+    //and what is difference? which one is better to use?
+    var t = 10;
+    Y = t++;
+    console.log(Y, t) // (10, 11) Assign ---> Increment
+
+    var t = 10;
+    Y = ++t;
+    console.log(Y, t) // (11, 11) Increment ---> Assign
+
+    var mn = 0,
+        nm = 0;
+    console.log("It is mn++ value:", mn++) //0 assign 0 to mn and after save this assignment increment that not matter for us, I think it's 
+        //important for compiler or storage
+        //go to show an important note
+    console.log("go to show an important note")
+    console.log("It is mn value:", mn) // what do u think??? it's 0 yet???
+    console.log("Whereas mn++ show 0 but u can see mn is 1 also:|")
+    console.log(++nm) //1 increment 0 value of nm to 1 and and will assign
+
+    var km = "1";
+    console.log(typeof(km)); //String
+    console.log(km++, typeof(km)) // 1, Number
+    var mk = "1";
+    console.log(++mk, typeof(mk)) // 2, Number
+
+    console.log("****************")
+
+    for (var KL = 0; KL <= 3; KL++) {
+        console.log(KL) // 
+    }
+    console.log("****************")
+    for (var LK = 0; LK <= 3; ++LK) {
+        console.log(LK) // 
+    }
+
+    console.log("##############")
+
+    for (var KL = 0; KL <= 3;) {
+        console.log(KL++) // 
+        console.log(KL) // I L0Ve U :)
+    }
+    console.log("****************")
+    for (var LK = 0; LK <= 3;) {
+        console.log(++LK) // 
+        console.log(LK)
+    }
+    // And all this difference is for your choose, console.log which one? kl or kl++(++kl)
+    //And Now I think I understand this difference
+
+    //   خوم نه کوژمو:///، ل او وختو هیشتا یک دانه یان حالی بومه:|||... خخخخ هههه و له امانه 
+    // ولی خوایی ارزشی بوو هرچه ن ک  نازانم اشی ل کوی استفاده یان که م و قاعدتا چون هیشتا نیازم نکفته پیان خب خب بچین بو ادامه
+
+
+    ///Precedence of + -(this two are same) is more than * / %(three are same Precedence) and ** is less than both and
+    // ++ , -- are less than all of those additionally of  typeof and !, also preFix(++i, --i) has Precedence than postFix(i++, i--)
 </script>
