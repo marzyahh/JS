@@ -1,4 +1,6 @@
 <script>
+    //this comments are just for document lessons that I learned...
+    //search for unknown words and change them to known 
     // Someday we have to  stop and ask ourself, what are you doing body???
     // it's my first lesson in new method, I like it, it's just a inline comment
     /* we can have a multi-line comments, too.
@@ -8,11 +10,12 @@
     */
 
     // This is a bout Data Type:  I can't recognize "null" and "undefined" types, I hope at the end of this section, I take back my words
-    var a; // I think this log will an "undefined" and it's true, but why in course show "null"? console.log("undefined type is which one that has no set any value for it like 'a' but what is the fucking null?")
+    var a; // I think this log will an "undefined" and it's true, but why in course show "null"? console.log("undefined type is which one that has no set any value for it like 'a' but what is the null?")
+    console.log(a)
+    var b = 13; // b is a uniq name for identified variable b, that called identifier,\.
 
-    var b = 13;
-
-    var a = 7;
+    var a = 7; //Creating a variable in JavaScript is called "declaring" a variable. we declared a
+    var a; // 7 is assigned to a yet
     var b = a; // b eq 7
 
 
@@ -20,6 +23,7 @@
     var b = a + 2; // Marzi2
 
     let c = 3;
+    // console.log(x)
     let d = c + a; //3Marzi
 
     let e = d * 2; //NAN
@@ -43,18 +47,22 @@
 
     var $num = 2508; //2508
     //I have to study more for find another kinds
+    // and studied now: 
+    // A letter (A-Z or a-z)
+    // A dollar sign ($)Using the dollar sign is not very common in JavaScript, but professional programmers often use it as an alias for the main function in a JavaScript library.
+    // Or an underscore (_) //Using the underscore is not very common in JavaScript, but a convention among professional programmers is to use it as an alias for "private (hidden)" variables.
+    var _num = 2580;
+
 
 
     //Case sensitive example
     var SumOfNumbers = "this is for try Case sensitive";
     SUMOFNUMBERS = 1110; // but I don't know why in course for something like that get undefined error massage but for me return 1110???
 
-    // increment AND  decrement
+    // all operators: increment AND  decrement
     var y = 47;
     y++ // eq to y = y + 1 or y += 1
     y += 1;
-    console.log(y)
-
 
     // example for compound 
     y += 3; //eq to y = y + 3
@@ -75,6 +83,11 @@
     var div = xVar / yVar; //eq to 0.771
     var rem = xVar % yVar; //eq to 27
     var remReverse = yVar % xVar; //eq to 8
+    var ext = 5 ** 2; //25 The exponentiation operator (**) raises the first operand to the power of the second operand.
+
+    //sequence in JS is like in math: actually Operator Precedence is truth
+    var X = 100 + 50 * 3; //250  Multiplication (*) and division (/) have higher precedence than addition (+) and subtraction (-).
+    var Z = (5 * (2 + 2) - 6) * 10 + 5; // evaluated 145, cause  is computed in parentheses firs(And (as in school mathematics) the precedence can be changed by using parentheses:)
 
 
     //operation on Decimal numbers example
@@ -113,9 +126,9 @@
 
 
     //Example for Escape Sequence
-    var escapes = "all Escapes will be explain there: "
+    var escapes = "all Escapes will be explain there: the one of them is newline:\nis for it. the next one is Carriage Return: \r used for it and actually I don't what means is? I just see skip it and make a space\nanother one is for tab by \t make a tab I think\n what means of Form Feed? I don't know too,\f let see\n and what about Vertical Tabulator?\v sorry:( the last one is backspace by \b and don't work for me cause I think I didn't set lan for html tag:|\n and we know that for show single and double quote use \' or \" and for show backslash use \\ "
+    console.log(escapes)
 
-    console.log(k) // k is undefined
 
 
     //###########################################################################################
@@ -145,4 +158,22 @@
     9) for study about Escape Sequence in JS read the related examples
 
     */
+
+
+
+    ///second days of my learning, actually it's third:(
+    //I studying  w3school js and I have some notes:)
+    //JavaScript Literals????????????(unknown)
+
+
+    var q = "5" + 2 + 2; //522 (string is matter and coming first so is)
+    var qq = 5 + 2 + 2; //9 this number called operand(5, 2 and 2) and + called operator
+    var qqq = 5 + 2 + "2"; // 72 it is a String not Number anymore
+    console.log(typeof qqq)
+    console.log(typeof qq)
+    var qqqq = 5 + "2" + 2; // 522
+    var qqqqq = 5 + 2 + "2" + 5 + 2; // 72252 after string all of them treat such as string
+    console.log(qqqqq)
+
+    console.log(k) // k is undefined
 </script>
