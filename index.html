@@ -59,18 +59,6 @@
     var SumOfNumbers = "this is for try Case sensitive";
     SUMOFNUMBERS = 1110; // but I don't know why in course for something like that get undefined error massage but for me return 1110???
 
-    // all operators: increment AND  decrement
-    var y = 47;
-    y++ // eq to y = y + 1 or y += 1
-    y += 1;
-
-    // example for compound 
-    y += 3; //eq to y = y + 3
-    y -= 3; //eq to y = y - 3
-    y *= 3; //eq to y = y * 3
-    y /= 3; //eq y = y / 3
-
-
     //operation on numbers example
     var xVar = 27;
     var yVar = 35;
@@ -116,7 +104,7 @@
     var subDecimal = zVar - qVar; // eq  (-8) so  27.00 is just like a number not decimal number
 
 
-    //e.x for quote in string
+    //e.g for quote in string
     var string1 = "it's daman marzyah"; // no any problem
     var string2 = "it is \"first way\" for \"solve\" this problem";
     var string3 = `"it is "second way" for \"resolve\" it";`
@@ -165,15 +153,6 @@
     //I studying  w3school js and I have some notes:)
     //JavaScript Literals????????????(unknown)
 
-
-    var q = "5" + 2 + 2; //522 (string is matter and coming first so is)
-    var qq = 5 + 2 + 2; //9 this number called operand(5, 2 and 2) and + called operator
-    var qqq = 5 + 2 + "2"; // 72 it is a String not Number anymore
-    console.log(typeof qqq)
-    console.log(typeof qq)
-    var qqqq = 5 + "2" + 2; // 522
-    var qqqqq = 5 + 2 + "2" + 5 + 2; // 72252 after string all of them treat such as string
-    console.log(qqqqq)
 
     // Today is third days that I practice
     // so I think I was confused a little, the document in w3school is so long:)
@@ -237,6 +216,145 @@
     // ولی خوایی ارزشی بوو هرچه ن ک  نازانم اشی ل کوی استفاده یان که م و قاعدتا چون هیشتا نیازم نکفته پیان خب خب بچین بو ادامه
 
 
-    ///Precedence of + -(this two are same) is more than * / %(three are same Precedence) and ** is less than both and
-    // ++ , -- are less than all of those additionally of  typeof and !, also preFix(++i, --i) has Precedence than postFix(i++, i--)
+    //punch 1(Arithmetic operator)
+    ///Precedence of * / %(three are same Precedence) is more than + -(this two are same) and ** is more than both and
+    // ++ , -- are more than all of those additionally of  "typeof" and !, also  postFix(i++, i--) has more Precedence than preFix(++i, --i)
+
+
+    //punch 2 
+    //JavaScript Assignment Operators: sequential is like this:
+    // +=, /=, -=, *=, %=, >>=, <<=, >>>=, &=, ^=, |=
+
+    // example for compound 
+    var y = 47;
+    y += 3; //eq y = y + 3
+    y /= 3; //eq y = y - 3
+    y -= 3; //eq y = y * 3
+    y *= 3; //eq y = y / 3
+    y %= 3; //eq y = y % 3
+
+    // all operators: increment AND  decrement
+    y++ // eq to y = y + 1 or y += 1
+    y += 1;
+    //
+
+    y = 16;
+    y <<= 4; // 16 * (2 ** 4)
+    console.log("it is about y <<= 4 ", y)
+
+    y = 5; // 00101
+    y &= 1; // 00001
+    console.log(y) // AND(just both were 1 result is 1) of both(00001 == 1)
+
+    y = 5; // 00101
+    y ^= 3; // 00011
+    console.log(y) // XOR(two diff value(0, 1) has a 1 result) of both(00110 == 6)
+
+    y = 5; //  00101
+    y |= 3; // 00011
+    console.log(y) // OR(if someone was 0 or both was 1 => has a 1 result) of both(00111 == 7)
+
+    // punch 3 
+    //JavaScript String Operators and Adding Strings and Numbers
+    var myString = "My fullname is ";
+    var myString2 = ("Marzyah hoseini.")
+    var myString3 = myString2.length - 1;
+    console.log(myString + myString2)
+
+
+    var q = "5" + 2 + 2; //522 (string is matter and coming first so is)
+    var qq = 5 + 2 + 2; //9 this number called operand(5, 2 and 2) and + called operator
+    var qqq = 5 + 2 + "2"; // 72 it is a String not Number anymore
+    console.log(typeof qqq)
+    console.log(typeof qq)
+    var qqqq = 5 + "2" + 2; // 522
+    var qqqqq = 5 + 2 + "2" + 5 + 2; // 72252 after string all of them treat such as string
+    console.log(qqqqq)
+
+    //punch 4: JavaScript Comparison Operators
+    //sequential: ?(ternary == سه تایی), <= (less than or eq), >= (greater than or eq), < (less than), > (greater than), !== (not eq value or not eq type), !=(not eq), ===(eq value and eq type), == (eq to)
+    // it's about () parentheses is matter than any thing in Js, . second matter is dot for met member , [] also for getting member, ()for call func and new for create something
+
+    var X = 5;
+    var Y = (X == 4) ? "Hello" : "Hello JS";
+    var L =
+        console.log(Y)
+
+    //less than
+    //comparison String to string!
+    console.log("a" < "b") //true
+    console.log("a" > "b") // false
+    console.log("a" <= "A") // false
+    console.log("d" < "3") // false
+
+    //comparison Number to String
+    console.log("5" < 5); //false
+    console.log("3" < 5); //true
+    console.log("5" <= 5); //true
+
+    console.log("hello" < 5); //false unknown:(
+    console.log(5 < "hello"); //false
+
+    // console.log("5" < 3n); //false
+    // console.log("3" < 5n);         // true
+
+    //comparison Number to Number and Number to BigInt(like 3n) is to easy so ignore it
+
+    // Comparing Boolean, null, undefined, NaN 
+    console.log(true < false); //false ==> true is converted to 1, eq to 1 < 0 or 1 < false
+    console.log(false < true); //true ==> false is converted to 0
+    console.log(null < true); //true ==> null is converted to 0
+    console.log(1 < null); //false
+    console.log(undefined < null); //false ==> undefined is converted to NaN
+    console.log(undefined > null); //false ==> If either value is NaN, the operator returns false.
+    console.log(NaN < 3);
+    console.log(NaN < "3");
+
+    //punch 5: JavaScript Logical Operators: sequential: ! , && , ||
+    T = 5;
+    M = 2;
+    // AND logical
+    console.log(T > 0 && M > 0) // true, all of them should be true
+    console.log(T > 0 && M < 0) // false
+    console.log(T < 0 && M < 0) // false
+        // OR Logical
+    console.log(T > 0 || M > 0) // true, just one of them was true
+    console.log(T > 0 || M < 0) // true
+    console.log(T < 0 || M < 0) // false
+
+    //NOT logical
+    N = -3;
+    console.log(!(T < 0 || M < 0)) // true
+    console.log(!(T < 0 || M < 0) && N > 0) // false  first computed anything in peranthese
+    console.log(!(T < 0 || M < 0) && (N > 0 || T < 0)) // !(true) == false
+
+
+    //punch 6 JavaScript Type Operators:sequential: typeof, instanceof
+    console.log(typeof(5)) // number
+    console.log(typeof("5")) // string
+    console.log(typeof true) // boolean
+    console.log(typeof undefined) // undefined
+    console.log(typeof books) // undefined
+
+    //instanceof coming in ECMA2016, so for later
+
+
+    //punch 7 JavaScript Bitwise Operators: sequential: >>> Zero fill right shift (Shift right (unsigned)) ==  >> Signed right shift(Shift right) == << Zero fill left shift(Shift left), & Bitwise AND,  ^ Bitwise XOR, ~ BItwise NOT, | Bitwise OR
+    //  shift left(<<): Bitwise shifting any number x to the left by y bits yields x * 2 ** y. So e.g.: 9 << 3 translates to: 9 * (2 ** 3) = 9 * (8) = 72.
+    var BBB = 3; // 0011
+    var BBB = BBB << 4; // 3 * (2 ** 4) == 48 :) بعنی دو به توان این عدد شیفت ب چپ: 
+    console.log(BBB)
+    console.log("^^^^^^^^^^^^^^\n^^^^^^^^^^^^^^")
+
+    var BBB = 16;
+    BBB = BBB >> 4; // eq 1 ( 16 / (2 ** 4) )shift to right
+    console.log(BBB)
+
+    var BBB = 5;
+    BBB = BBB >> 2; // eq 1 ( 5 / (2 ** 2) )shift to right (00101 / 00010) not 5 / 2 = 2.5
+    console.log(BBB)
+
+    var DDD = 16;
+    DDD >>> 4; // 16 / (2 ** 4) shift to right unknown (what means unassigned?)
+    console.log(DDD) // for non-negative number is like >>, but for negative is diff, and why?what? ==> unknown
 </script>
