@@ -103,22 +103,6 @@
     var sumDecimal = qVar + zVar; //eq to 62
     var subDecimal = zVar - qVar; // eq  (-8) so  27.00 is just like a number not decimal number
 
-
-    //e.g for quote in string
-    var string1 = "it's daman marzyah"; // no any problem
-    var string2 = "it is \"first way\" for \"solve\" this problem";
-    var string3 = `"it is "second way" for \"resolve\" it";`
-    var string4 = `it's a way for "strings that contain both" double and single quote`
-    var string5 = 'and this is "third and best way" for "resolve" this problem'
-        // var string2 "it is " Marzyah ""; // Uncaught SyntaxError: unexpected token: string literal error
-
-
-    //Example for Escape Sequence
-    var escapes = "all Escapes will be explain there: the one of them is newline:\nis for it. the next one is Carriage Return: \r used for it and actually I don't what means is? I just see skip it and make a space\nanother one is for tab by \t make a tab I think\n what means of Form Feed? I don't know too,\f let see\n and what about Vertical Tabulator?\v sorry:( the last one is backspace by \b and don't work for me cause I think I didn't set lan for html tag:|\n and we know that for show single and double quote use \' or \" and for show backslash use \\ "
-    console.log(escapes)
-
-
-
     //###########################################################################################
 
     /*
@@ -357,4 +341,392 @@
     var DDD = 16;
     DDD >>> 4; // 16 / (2 ** 4) shift to right unknown (what means unassigned?)
     console.log(DDD) // for non-negative number is like >>, but for negative is diff, and why?what? ==> unknown
+
+    //In move I get to function but yet don't study Data Type ib w3school, it was clearly?
+    // JavaScript Data Types: number, string, boolean, Array, object, symbol, null and undefined
+    // Very very very Important Notes *****************in JS Primitive(primitive value, primitive data type) is data that not object or any methods, just when u defined them and print typeof them they can be one this: number, string, boolean, bigint and undefine
+    // so plz plz plz understand differ between them and function that defined for enable changed them: Number, String, Boolean  ******************* 
+    //   داریم: یکی اون مقداره ک در نظر گرفتیم حالا ما میگیم پپرایمیت ها همشوووووننن غیر قابل تغییرن،‌هر تغییری روشون انجام بدیم غیر قابل تغییر میشن پس برای تغییر دادن مقداری که وجود داره حتما باید یک متغییر دیگه درست کنیم  و از طریق آبجکت ها و آرایه ها و فانکشن ها نمیتونیم این کار رو بکنیم مثل متلا زیرprimitive بنابراین وقتی ی متغییری داریم ک ی مقداری براش تعریف کردیم اینجا دو تا 
+
+    var bar = "baz";
+    console.log(bar); // baz
+    bar.toUpperCase();
+    console.log(bar); // baz All primitives are immutable, i.e., they cannot be altered so we have to define new one
+    var bar1 = bar.toUpperCase() // BAZ
+
+
+    var NN = 5 + 2 + "Hello"; // 7Hello String
+    var NN = "Hello" + 5 + 2; //Hello52 after a string every thing change to string
+    var NN = 5 + "Hello" + 2 + 4; //5Hello24
+    var NN = 8; //now is number type so it is dynamic
+    //JavaScript evaluates expressions from left to right. Different sequences can produce different results:
+    // JavaScript has dynamic types. This means that the same variable can be used to hold different data types:
+
+    //Type 1: String: is for storing and manipulating text, zero or more character in double quot or single quot, 
+    //e.g for quote in string
+    var name = "It's 'Marzyah'"; // it's fine:)
+    var string1 = "it's daman marzyah"; // no any problem
+    var string2 = "it is \"first way\" for \"solve\" this problem";
+    var string3 = `"it is "second way" for \"resolve\" it"`;
+    var string4 = `it's a way for "strings that contain both" double and single quote`;
+    var string5 = 'and this is "third and best way" for "resolve" this problem';
+    //Escape Character Character(by Sequence)
+
+    var escapes = "all Escapes will be explain there: the one of them is newline:\nis for it. the next one is Carriage Return: \r used for it and actually I don't what means is? I just see skip it and make a space\nanother one is for tab by \t make a tab I think\n what means of Form Feed? I don't know too,\f let see\n and what about Vertical Tabulator?\v sorry:( the last one is backspace by \b and don't work for me cause I think I didn't set lan for html tag:|\n and we know that for show single and double quote use \' or \" and for show backslash use \\ "
+    console.log(escapes)
+
+    //Strings Can be Objects but don't do this please, Don't create strings as objects. It slows down execution speed, Objects cannot be compared
+    var x = "Marza";
+    name2 = new String("Marza");
+    console.log(x == name2) // true, about value
+    console.log(x === name2) // false, is about type
+
+    //Objects cannot be compared:
+    var myObjectString = new String("MARZA");
+    var myObjectString2 = new String("MARZA");
+    console.log(myObjectString == myObjectString2) // false 
+    console.log(myObjectString === myObjectString2) // false, Comparing two JavaScript objects will always return false.
+
+    //R U Ready fot Starting String Methods and Properties? contains of: String Length, Finding a String in a String, Searching for a String in a String, Extracting String Parts, The slice() Method, The substring() Method, The substr() Method, Replacing String Content, Converting to Upper and Lower Case, The concat() Method, String.trim(), Extracting String Characters, The charAt() Method, The charCodeAt() Method, Property Access, Converting a String to an Array, 
+    var myIndexOf = "if u are a student, I hope free soon as soon";
+    var myIndexOfLength = myIndexOf.length; //44
+    var myIndexOf1 = myIndexOf.indexOf("soon"); // first index that soon happened for first time 32
+    var myIndexOf2 = myIndexOf.indexOf("soon", 33); //the first one soon start from 32, and if u want to show index of second one, we say to it: please start from after position of 32, actually please start from 33 by a parameter! 
+    var myIndexOf3 = myIndexOf.indexOf("you"); //-1 returns -1 if the value to search for never occurs
+    var myIndexOfLast = myIndexOf.lastIndexOf("soon") // find last soon and return first index of it(the index of the first soon from the end) 40
+    var myIndexOfLast1 = myIndexOf.lastIndexOf("soon", 25) // -1 causes after position of 25 we don't have the last one soon, repeat two times
+    var myIndexOfLast2 = myIndexOf.lastIndexOf("soon", 39) // unknown, really unknown for me
+        // var myIndexOfLast1111 = myIndexOf.IndexOf("Soon") // -1 indexOf id case sensitive
+    var myIndexOfLast11111 = myIndexOf.lastIndexOf() // -1
+        //search() 
+    var mySearchMethod = myIndexOf.search("soon"); // 32 it's not same with indexOf(), this method don't get second parameter, and we can search with regular expression(reading later) 
+
+    //Extracting String Parts: How to get some of letters of a string? we have three ways for do it
+    //slice(start, end)
+    var findBySlice = myIndexOf.slice(5, 10); // show are a, find any words from position 5 to 10.
+    var findBySlice1 = myIndexOf.slice(-10, -5); // on as, for negative value we start from the end(n has a -10 position, 0 ==> -9, o ==> -8,..) and seconde on is steps to forward, 5 step to forward and finally show it
+    var findBySlice2 = myIndexOf.slice(-10, 5); //empty
+    var findBySlice3 = myIndexOf.slice(10, -7); //student, I hope free soon
+    var findBySlice4 = myIndexOf.slice(10); //student, I hope free soon as soon
+    var findBySlice5 = myIndexOf.slice(-10); //on as soon
+    var findBySlice8 = myIndexOf.slice(myIndexOf.length - 10); //on as soon
+    var findBySlice6 = myIndexOf.slice(10, 5); //  empty string
+    var findBySlice7 = myIndexOf.slice(-5, -10); // empty string
+    // so we have some notes: a) if had just one parameter, return from this position and if this params is negative start from the end of string and count from -1 not zero, and if negative it's like length(findBySlice8)
+    // if endIndex is negative, so the start should be too
+    // if both is same(both negative or both positive) endIndex should be great than startIndex otherwise result is an empty(findBySlice6, findBySlice7 )
+    // if I not wrong, this period between this parentheses is  "نیم باز", means that for count position start from the startIndex to endIndex - 1;
+    // I think it's so lovely, I hope can help me in future:)
+
+    //The substr() Method
+    // first argument is startIndex(actually startIndex + 1) second one is length(actually length - 1)
+    var findBySubstr = myIndexOf.substr(); // if u are a student, I hope free soon as soon //eif no defined both startIndex and length, treat like 0
+    var findBySubstr2 = myIndexOf.substr(4, 8); // are a s(start from position 5 and count 7 index)
+    var findBySubstr1 = myIndexOf.substr(32); // soon as soon// length is undefined so go to end of string
+    var findBySubstr3 = myIndexOf.substr(-4, 8); //soon,  the index starts counting from the end of the string// length is NaN (undefined) so go to end of string
+    var findBySubstr4 = myIndexOf.substr(-4); // soon the length arg not defined, treat like a 0// If start is a negative number, the index starts counting from the end of the string.
+
+    //The substring() Method
+    //every things in substring is like slice, but  substring can not accept negative value, and no matter if endIndex be less than startIndex and substring treat like that startIndex and endIndex will be changed(swapped)
+    // and Diff with substr is that substr don't have endIndex it had length instead
+    var findBySubstring = myIndexOf.substring(5) //are a student, I hope free soon as soon
+    var findBySubstring1 = myIndexOf.substring(44); //empty string, it's equal to endIndex of our String
+    var findBySubstring2 = myIndexOf.substring(5, 10) //are a
+    var findBySubstring3 = myIndexOf.substring(10, 5) // are a two arg had ba swapped, another diff with slice
+    var findBySubstring4 = myIndexOf.substring(-5, 10) // if u are a // any argument less than zero treat like 0(start from 0)
+    var findBySubstring5 = myIndexOf.substring(-5); // if u are a student, I hope free soon as soon
+    var findBySubstring6 = myIndexOf.substring(-50); // if u are a student, I hope free soon as soon ==> Any argument value that is NaN is treated as if it were 0.
+    var findBySubstring7 = myIndexOf.substring(myIndexOf.length - 6); // s soon
+    var findBySubstring8 = myIndexOf.substring(-5, -2); // "" it's eq to  (0, 0)
+
+
+    //O.K no need to checkout to new branch:)
+
+    //replace: Just take it easy please, latter when I will study  regular expression( RegExp) I came back and learn u very well, u have my words ok marzyah?? (unknown)
+
+    var replaceVar = "It is A example for replacing method";
+    var replacing = replaceVar.replace('example', 'e.g');
+    console.log(replaceVar, " replaced: ", replacing); //It is A example for replacing method  replaced:  It is a e.g for replacing method
+    //replace is case sensitive
+    var rePlacing = replaceVar.replace('Example', 'e.g'); // It is A example for replacing method
+
+    //Converting to Upper and Lower Case methods
+    var toLowerCaseVar = replaceVar.toLocaleLowerCase(); //it is a example for replacing method
+    var toUpPerCaseVar = replaceVar.toUpperCase(); // IT IS A EXAMPLE FOR REPLACING METHOD
+    //toLocaleUpperCase(toLocaleLowerCase): I think it's like toUpperCase method, just browser can be make diff, such as for some lang like Turkish we have to use this instead of(unknown)
+
+    //The concat() Method : a simple and lovely method, join strings to gether
+    var concatVar = "It is "; // if this space don't write, the end letter of var1 stick to first letter of var2.
+    var concatVar2 = "Marzyah.";
+    var concatVar3 = concatVar.concat(concatVar2); // It is Marzyah.
+    // can use + too instead of concat()
+    var concatVar4 = "There is" + " " + "good student."; //There is good student.
+
+    // String.trim(): remove whitespace from every where of string
+    var trimVar = "     Hiiii "; //"     Hiiii "
+    var trimVar1 = trimVar.trim(); // "Hiiii";
+    var trimVar3 = trimVar.trimStart(); // "Hiiii " trimStart === trimLeft
+    var trimVar2 = trimVar.trimEnd(); // "     Hiiii" trimEnd === trimRight
+
+    //Extracting String Characters: we have 3 methods for this meaning
+
+    var extractingStr = trimVar.charAt(5); //H
+    var extractingStr1 = trimVar.charCodeAt(5); //72
+    //Property Access is the third one, but  might be a little unpredictable
+    var extractingStr2 = trimVar[6]; // i
+    var extractingStr3 = trimVar[15]; //undefined but charAt() return <empty string> 
+    var extractingStr4 = trimVar[6] = "K"; // K
+    console.log(trimVar.constructor) // function String()
+
+
+    //Converting a String to an Array: split() برا خوا وکیل اونه استرینگ متده کانی فره س یکسر گوجمی کرد بمینی چه نی وختمی گرت، بخوا ناکفمه قه ره تا تا دو روژ تر
+
+    //Type 2 : JavaScript Numbers(continue of line 352)
+    // OK, number had some methods to but less than string, so let's go
+    // before any thing, JS defied some properties of number just for using easy(good interface:))) like: 
+    //Number.EPSILON
+    console.log(Number.EPSILON) //2.220446049250313e-16
+    console.log(Number.MAX_VALUE); // 1.7976931348623157e+308 : the largest possible number in JS(Represented as infinity)
+    var numberMaxValue = 100;
+    // console.log(numberMaxValue.MAX_VALUE(100)) // undefined : so it's not about specific numbers, just there are for defined and using directly( is true for all number property)
+    console.log(Number.MIN_VALUE); // 5e-324 :  the smallest possible number in JS
+    console.log(Number.NEGATIVE_INFINITY); // -Infinity : Represents negative infinity (returned on overflow)(منفی بی نهایت)
+    console.log(Number.POSITIVE_INFINITY); // Infinity : Represents a "Not-a-Number" value
+    console.log(Number.MAX_SAFE_INTEGER); // 9007199254740991
+    console.log(Number.MIN_SAFE_INTEGER); // -9007199254740991
+    console.log(Number.NaN); // NaN :‌Represents a "Not-a-Number" value
+    // I don't know prototype is a property or is a method of numbers? I'll get it a few min later
+
+    //methods
+    //JS just had a one type number(no Integer, short, long,...) 
+    //Floating Point(FP): a way for show large numbers ==> -(134.45) *  (10 ** 5) :::: - == sign, 134.45 == Mantissa, 5 == Exponent so...
+    //so an Integer number had a 15 bit and one sign, in JS too the largest Integer number(without any exponent) had  15 bit
+    var numberType = 25.0001;
+    var numberType1 = 9999999999999999; // 10000000000000000
+    var numberType2 = 999999999999999; //999999999999999
+    console.log(numberType.constructor) // function Number() : consist of all  properties and methods ogf Number type
+
+    // isFinite() is a method that if type of number is a finite or type of number return true else false; it's diff with isFinite() function
+    var numberIsFinite = Number.isFinite(123) //true
+    var numberIsFinite1 = Number.isFinite(-123) // true
+    var numberIsFinite2 = Number.isFinite(5 - 2) // true
+    var numberIsFinite3 = Number.isFinite("123") // false
+    var numberIsFinite4 = Number.isFinite(Infinity) // false
+    var numberIsFinite5 = Number.isFinite(-Infinity) //false
+    var numberIsFinite6 = Number.isFinite(20 / 0) // false
+    var numberIsFinite7 = Number.isFinite(0 / 20) // true
+
+    var numberIsInteger = Number.isInteger(-12); // true
+    var numberIsInteger1 = Number.isInteger(12.00); // true
+    var numberIsInteger2 = Number.isInteger(12.05); //false isInteger() return true if value is number type and integer else false
+    var numberIsInteger3 = Number.isInteger(12.0000000000000001); // true
+    var numberIsInteger4 = Number.isInteger(12.000000000000001) // false and why??? (unknown)
+
+    var numberIsNaN = Number.isNaN(0 / 0); // true why is NaN??? (unknown yet study after finished NaN again) 
+    var numberIsNaN1 = Number.isNaN(NaN); // true NaN == Not A Number
+    var numberIsNaN2 = Number.isNaN("NaN"); //false any thing else NaN is false result
+    var numberIsNaN3 = Number.isNaN(Infinity); // false
+
+    var numberIsSafeInteger = Number.isSafeInteger(3) // true : return true if value is safe integer:)
+    var numberIsSafeInteger1 = Number.isSafeInteger(Math.pow(2, 53)) // false
+    var numberIsSafeInteger2 = Number.isSafeInteger(Math.pow(2, 53) - 1) // true : a safe integer is a number between -((2 ** 53) - 1) till (2 ** 53 - 1)
+        //لعنتی اصلاااا نمزانی NaN() چی ب چیهههههه (unknown)
+
+
+
+
+    //Type 3 : Boolean(خوزگا گشتیان وکو تو بشر بوایتن:\:)
+
+    // use for conditional, when u have to choose one option: yes or no, off or on, 0 or 1, true or false
+    //Boolean() function used fot return this value: true or false
+    var booleanType = Boolean(10 > 9); // true eq to (10 > 9) even eq to 10 > 9 (with out parentheses)
+
+    // 0 , -0, null, undefined, omit value, empty string "" and false create an object that return false value
+
+    var booleanType1 = Boolean(0); //false
+    var booleanType2 = Boolean(-0); //false
+    var booleanType3 = Boolean(""); //false
+    var booleanType4 = Boolean(); //false
+    var booleanType5 = Boolean(null); //false
+    var booleanType6 = Boolean(undefined); //false
+    var booleanType7 = Boolean(false); //false
+    var booleanType8 = Boolean(0 / 1); //false ==> it's null (0 / anything) is false ==> 0 / 1 == 0 * 1/1 and 1/1 ==1 ===> 0 * 1 == 0 so it's acteptable
+    var booleanType9 = Boolean(0 / "SomeThing"); //false
+    console.log(typeof(0 / 0), booleanType8, booleanType9, booleanType3, booleanType4, booleanType5, booleanType6, booleanType7)
+
+    // Every thing in a double quot had a true result ("anything")
+    var booleanType10 = Boolean("anyyyyyythings"); //true
+    var booleanType11 = Boolean(01);
+    var booleanType12 = Boolean(Infinity); // true Infinity is not NaN and NaN is a Not A Number but not a Not A datatype Number and Infitity is a datatype number so treat like a number(expect zero that return false)
+    var booleanType13 = Boolean; //true
+    var booleanType14 = Boolean(1 / 0); // true 1 / 0 == 1 *  0/0 and 0/0 == undefined ===> 1 * undefined == undefined,  in math rules but have some differ in JS rules: 0 / 0 !== undefinef in Js it's == Infitity and is a number type
+
+    // like string, boolean can be object too but don't this cause object can't be compare and new make a complicaty more 
+
+    var booleanType15 = false; // false ==> it's primitive value of boolean
+    var booleanType16 = new Boolean(false)
+    var booleanType17 = new Boolean(false)
+    console.log(booleanType15 == booleanType16, booleanType16 === booleanType17); // true : had a same value, false : diff type
+    console.log(booleanType16 == booleanType17, booleanType16 === booleanType17); // false, Note the difference between (x==y) and (x===y). Comparing two JavaScript objects will always return false.(object can't be compare)
+
+    // constrictor 
+    var boolConstructor = true;
+    console.log(boolConstructor.constructor); // function Boolean
+
+    //prototype: Make a new method for JavaScript booleans:
+    // prototype is not just for boolean, it's for All JS objects
+    //when for an boolean object,create a new prototype, this new prototype is for all boolean(apply for true and false)
+
+    //Methods: toString() and valueOf()
+    // toString(): convert Boolean to string ==> return a boolean value as a string
+    // behind any variable that is a boolean and has a string value, JS called this method
+    var boolToString = false;
+    var boolToString1 = boolToString.toString(); // false and had a string type
+
+    //valueOf() : return primitive value of boolean object
+    var boolValueOf = false; // false
+    var boolValueOf1 = true; // true
+
+    // Type 4 : Array :(((
+    //used for store multiple(جندتایی) in one variable
+    // a set Items that write in a square brackets,spearated by comma,  and first Item had a zero possition(index[0])
+
+    //creating Array: name of array and then set values.
+    var arrFamilyTreeCreate = ['grandpa', 'grandma', 'fother', 'mother', 'dogthur', 'son'];
+    //also
+    var arrFamilyTreeCreate1 = new Array('grandpa', 'grandma', 'fother', 'mother', 'dogthur', 'son'); // but not good way
+    //accese to an item in array
+    var arrAccess = arrFamilyTreeCreate[0]; // grandpa
+    //changing an array
+    arrFamilyTreeCreate[1] = 'grandMother';
+    var arrAccess1 = arrFamilyTreeCreate[1]; // grandMother
+    //Access to all arrays
+    var arrAccess2 = arrFamilyTreeCreate; // Array(6) [ "grandpa", "grandMother", "fother", "mother", "dogthur", "son" ], and Array(6) is like a Array.constructor
+
+    // ok, long story short, type of array is object but it's diff with object as a data type in JS: in access to their items
+    // in Array use index of each item(start by 0) and in object use the name of items
+    var diffArrAndObject = {
+        title: "this is an object",
+        discription: "just for more readability"
+    };
+    var diffInAccessToItems = diffArrAndObject["title"]; // this is an object
+    // important: When to Use Arrays. When to use Objects.
+
+    // JavaScript does not support associative arrays.
+    // You should use objects when you want the element names to be strings (text).(cause: In JavaScript, objects use named indexes.)
+    // You should use arrays when you want the element names to be numbers. (unknown) ( cause: In JavaScript, arrays use numbered indexes.)
+    //  soooooo long story short: JS don't suport Array by named index, in simple way JS don't have hash(Arrays with named indexes are called associative arrays (or hashes).) 
+    arrFamilyTreeCreate["sixth_value"] = 'sibiling';
+    console.log(arrFamilyTreeCreate); // Array(6) [ "grandpa", "grandMother", "fother", "mother", "dogthur", "son" ] حالا بمونه وقتی اون آرایه رو بسط میدم این مقدار سیبیلینگم داره
+    arrFamilyTreeCreate[6] = 'sibiling';
+    console.log(arrFamilyTreeCreate); //Array(7) [ "grandpa", "grandMother", "fother", "mother", "dogthur", "son", "sibiling" ]
+    // item of array can be an object, meaning this item can be an Array or an Object or a function 
+
+    // properties of array
+    //length property
+    console.log(arrFamilyTreeCreate.length); // 6
+    //Access to last item
+    var arrLast = arrFamilyTreeCreate[arrFamilyTreeCreate.length - 1]; // son
+    // constructor property
+    console.log(arrFamilyTreeCreate.constructor); // function Array()
+    //prototype property : just like befor types
+
+
+    //Methods
+    // if typeof an array is an object, so how to know that a variable is an arryay? by 3 ways
+    console.log(Array.isArray(arrFamilyTreeCreate)); // true
+    console.log(arrFamilyTreeCreate instanceof Array) // true
+        // and third ways is for older version:)
+
+    //concat() method: for joining any number of arrays to gether
+    var arr = ["Hello", "and"];
+    var arr1 = ["goodbye", "are"];
+    var arr2 = ["the", "greaating", "words"];
+    var arr3 = arr.concat(arr1, arr2); // Array(7) [ "Hello", "and", "goodbye", "are", "the", "greaating", "words" ]
+
+    //copp=yWithin() is a cool method: had 3 argument: target, start and end,start and end are optional ==> meaning: start from target index number and after that replace items with other elementts of arry untill length of array
+    // overwritte exciting items and change excit variable(wherease other methods don't)
+    var arr4 = ["Hello", "and", "goodbye", "are", "the", "greaating", "words", "excatualy"];
+    var arr5 = arr4.copyWithin(3); //ignore start and end value, so start from index 3, "are", and replace it with the first index til length arr4(8) : [ "Hello", "and", "goodbye", "Hello", "and", "goodbye", "are", "the"]; and now arr4 == arr5(alert id)
+    var arr6 = ["Hello", "and", "goodbye", "aren't", "the", "greaating", "words", "just"];
+    var arr7 = arr6.copyWithin(3, 1); //ignor end value, Array(8) [ "Hello", "and", "goodbye", "and", "goodbye", "aren't", "the", "greaating" ] :: start from index3(aren't) and replace it with value of  start inedx number(and) and after that til arr6 length 
+    var arr8 = ["this", "is", "for showing", "method with", "end value", "just"];
+    var arr9 = arr8.copyWithin(2, 1, 5); // ولا نمزانی او 5 بوچیه؟؟؟ ohhhh, I know that now:  just say keep on your replace till index number 5
+    var arr9 = arr8.copyWithin(2, 1, 2); // so start to replace from index number 2 and replace with value of number index 1 and keep on til index number 2(in real do anything cause index number 2 replace before)
+    console.log(arr8)
+        //entires method ==. don't change original array
+    var arr10 = arr7.entries(); // Array Iterator and if I be real, it's unknown for me too:))
+
+    //fill() method : array.fill(value, start, end) and just value can't be ignor
+    var arr11 = ["Albert", "Simon", "Dostoevsky"]
+        // var arr12 = arr11.fill('Osho', 0, 2); // ["Osho", "Osho", "Dostoevsky"] start from 0 index and keep on for 2 item(0 and 1)
+    var arr13 = arr11.fill("OSHO", 1, 2); // so now should start from Simon and replace two items(Simon and Dostoevsky) by OSHO but : [ "Albert", "OSHO", "Dostoevsky" ] and whhhhy????(unknown)
+    var arr14 = arr11.fill("Paulo"); // [ "Paulo", "Paulo", "Paulo" ]
+    var arr15 = arr11.fill(); // [ undefined, undefined, undefined ]
+
+    //inclouds() method: return true or false : array.includes(element, start)
+    console.log(arr8.includes("OSHO")) //false
+    console.log(arr8.includes("for showing")) //true
+
+    //indexOf() : return possition of specific item,  array.indexOf(item, start)
+    console.log(arr8.indexOf("is")); // 1
+    console.log(arr8.indexOf("is", 1)); //1
+    console.log(arr8.indexOf("is", 0)); //1
+    console.log(arr8.indexOf("for showing", -4)); // 3 : go to end, start to count from zero tii this end value(4), and right from there start to find value adn if found then return this number that counted or not return -1
+    console.log(arr8.indexOf(5)); // -1
+
+    //join(separator) method: convert an array to string : The elements will be separated by a specified separator.  default separator is  comma
+    console.log(arr8.join()); //this,is,is,for showing,method with,end value
+
+    //lastIndexOf(value, start): return index of last value, and if not found ==> return -1
+    console.log(arr8.lastIndexOf("is")); //2
+    console.log(arr8.lastIndexOf("is", 4)); //2
+    console.log(arr8.lastIndexOf("is", -5)); //1  accept negative
+    console.log(arr8.lastIndexOf("i", 4)); //-1  arr8 dont hava an Item with i value
+    console.log(arr8.lastIndexOf("is", 8)); //2
+    console.log(arr8.lastIndexOf("is", -8)); //-1 (unknown)
+
+    //map() :  array.map(function(currentValue, index, arr), thisValue): return aequre of numbers
+    var arr16 = [4, 49, 81, 3];
+    var arr17 = [];
+    console.log(arr16.map(Math.sqrt)); // [ 2, 7, 9, 1.7320508075688772 ]
+    console.log(arr8.map(Math.sqrt)); //[ NaN, NaN, NaN, NaN, NaN, NaN ]
+    console.log(arr17.map(Math.sqrt)); // Array [], don't have reault
+
+    //push() : add new value to end of array and change length of it
+    var arr18 = ["Nazanm kora", "besa bzanm"];
+    var arr19 = arr18.push("baskam bzani")
+    console.log(arr18[2]) // baskam bzani .. can't push a new value to an empty array!!
+    console.log(arr18.length) // 3  , push change the length of exciting variable
+
+    //shift() : remove the first item from array and change originally variable
+    var arr20 = arr18.shift();
+    console.log(arr18[0]); // not Nazanm kora any more is besa bzanm
+
+    //pop() : remove last item of array
+    var arr21 = arr18.pop(); //now arr18 just had a one value:  besa bzanm
+    console.log(arr21); // baskam bzani
+    console.log(arr18); // baskam bzani
+
+    //unshift() : add new value to bigginig of array
+    var arr22 = arr18.unshift("zaniim!"); // return 3 :: now arr18 and arr 22 had 2 value: zaniim! , besa bzanm(how return name of this new value????(unknowm))
+
+    //reverse(): reverse 
+    var arr23 = ["it", "is", "new", "variable"];
+    var arr24 = arr23.reverse();
+    console.log(arr24)
+
+    //slice(start, end) : return start and end -1, if the givin ber were negative: slice(-start, -end): count from end to start, -end + 1;
+    var arr25 = arr23.slice(1);
+    console.log(arr25)
+
+
+
+    //from() methods : instead of string we can use object, mapFunction, thisValue...
+    var arr16 = Array.from("Hello"); // [ "H", "e", "l", "l", "o" ]
+    console.log(arr16)
+        //Some methods of arrays is for a specific conditional, so we should defined a loop for them and I study them later
+        // they are: every(), find(), findIndex(), forEach(), fillter(), keys(), reduce(), reduceRight()
+
+    // Looping Array Elements:منظورش پیمایشه : we can use "for" for looping items of an array or Array.forEach() method
 </script>
