@@ -276,7 +276,7 @@
     console.log("3" < 5); //true
     console.log("5" <= 5); //true
 
-    console.log("hello" < 5); //false unknown:(
+    console.log("hellooo" < 5); //false unknown:(
     console.log(5 < "hello"); //false
 
     // console.log("5" < 3n); //false
@@ -361,7 +361,20 @@
     var NN = 8; //now is number type so it is dynamic
     //JavaScript evaluates expressions from left to right. Different sequences can produce different results:
     // JavaScript has dynamic types. This means that the same variable can be used to hold different data types:
-
+    /********************** BEFORE READING DATA TYPES YOU SHOULD KNOW THIS:
+    variable = value;
+    I) All JavaScript values, except primitives, are objects.
+    what is primitives????
+    primitives defined for two part: values and data types
+    what is primitive value??? a value that has no anyyyy method or property
+    what is primitive data type??? is data that has a primitive value(string, number, boolean, null and undefined)
+    primitive value can't be change at all, x = marzyah ==> we can change value of x, can't alter marzyah (،ایتر فره بدهیه صفر همیشه صفره فالس همیشه فالسه)
+    except primitives every thing in JS is an object, but how and string is a data type primitive and also can be object?
+    if string, boolean, number defined with new keyword are an object, Dates, Maths, Regular expressions(unknown yet), arrays, function and object always are object
+    objects are variable too, but can store more value
+    each item in an object called property in JS
+    this property can be a primitive value or any object or function(explain in Type 5)
+    /********************************************/
     //Type 1: String: is for storing and manipulating text, zero or more character in double quot or single quot, 
     //e.g for quote in string
     var name = "It's 'Marzyah'"; // it's fine:)
@@ -481,6 +494,8 @@
 
     //Converting a String to an Array: split() برا خوا وکیل اونه استرینگ متده کانی فره س یکسر گوجمی کرد بمینی چه نی وختمی گرت، بخوا ناکفمه قه ره تا تا دو روژ تر
 
+    //###################################################################################################################################################################
+
     //Type 2 : JavaScript Numbers(continue of line 352)
     // OK, number had some methods to but less than string, so let's go
     // before any thing, JS defied some properties of number just for using easy(good interface:))) like: 
@@ -532,8 +547,7 @@
     var numberIsSafeInteger2 = Number.isSafeInteger(Math.pow(2, 53) - 1) // true : a safe integer is a number between -((2 ** 53) - 1) till (2 ** 53 - 1)
         //لعنتی اصلاااا نمزانی NaN() چی ب چیهههههه (unknown)
 
-
-
+    //################################################################################################################################################################################################################################################
 
     //Type 3 : Boolean(خوزگا گشتیان وکو تو بشر بوایتن:\:)
 
@@ -586,6 +600,8 @@
     //valueOf() : return primitive value of boolean object
     var boolValueOf = false; // false
     var boolValueOf1 = true; // true
+
+    //################################################################################################################################################################################################################################################
 
     // Type 4 : Array :(((
     //used for store multiple(جندتایی) in one variable
@@ -713,20 +729,309 @@
 
     //reverse(): reverse 
     var arr23 = ["it", "is", "new", "variable"];
-    var arr24 = arr23.reverse();
+    var arr24 = arr23.reverse(); // Array(4) [ "variable", "new", "is", "it" ]
     console.log(arr24)
 
     //slice(start, end) : return start and end -1, if the givin ber were negative: slice(-start, -end): count from end to start, -end + 1;
-    var arr25 = arr23.slice(1);
-    console.log(arr25)
+    var arr25 = arr23.slice(1); //Array(3) [ "new", "is", "it" ]
+    var arr26 = arr23.slice(-3, -1); // Array [ "new", "is" ] (start from -3: new, end from: -1 +1 =0 ===> nothing more)
+    var arr27 = arr23.slice(); //Array(4) [ "variable", "new", "is", "it" ] : slice don't change original array and return a new array without start and end selected, here we don't have them so return completly array
 
+    //sort() methods : sort Items of an array, but maby for sort numbers doing  wrongs:
+    var sort1 = arr23.sort(); // Array(4) [ "is", "it", "new", "variable" ] : sort by alephatic
+    var sort2 = [22, 14, 89, 65, 13, 100];
+    var sort3 = sort2.sort(); // Array(6) [ 100, 13, 14, 22, 65, 89 ]: it's wrong cause sort numbers as a string and 1 is lower than 2, 8, 6(for compare 100, 13, 14, 22, 89, 65), also 0 is lower than 3, 4(for compare 100, 13, 14) so 100 coming first
+    // for solve this problem we had to set function to our sorting and defined for it that how treat(it's true for alphabetics too when we want sort ascending (up) or descending (down).)
+    //  function justForNow() {
+    //     sort2.sort(function(a, b)return {
+    //         a - b
+    //     }), something like that and sub first item and second one, if get negative result so set second item in first possition an return the removed item(s)
+    //     console.log(sort3) //
+    //  }
 
+    //splice() methods: use for remove and tick new item instead one that was removed, mabye stick without any remove: splice(index, howmany(to remove), new item )
+    var arrsplice1 = arr23.splice(2, 1, "remove second index value", "eq to new and", "stick this tree new value", "right start from the oossition of removed item"); //Array [ "new" ]
+
+    console.log(arr23) // Array(7) [ "is", "it", "remove second index value", "eq to new and", "stick this tree new value", "right start from the oossition of removed item", "variable" ]
+        //cause splice() changed original array
+
+    //toString() method: just like in boolean type: return array in dtring and sperate by some thing and comma is diffault
+
+    var arrToString = arr23.toString(); //is,it,remove second index value,eq to new and,stick this tree new value,right start from the oossition of removed item,variable
+    // toString don't change original array
+
+    //valueOf() methods : return the array items, it's difault method of array object ==> array.valueOf() == array
+    var arrValueOf = arr23.valueOf(); // Array(7) [ "is", "it", "remove second index value", "eq to new and", "stick this tree new value", "right start from the oossition of removed item", "variable" ] == return value of arr23;
 
     //from() methods : instead of string we can use object, mapFunction, thisValue...
     var arr16 = Array.from("Hello"); // [ "H", "e", "l", "l", "o" ]
-    console.log(arr16)
-        //Some methods of arrays is for a specific conditional, so we should defined a loop for them and I study them later
-        // they are: every(), find(), findIndex(), forEach(), fillter(), keys(), reduce(), reduceRight()
+    //Some methods of arrays is for a specific conditional, so we should defined a loop for them and I study them later
+    // they are: every(), find(), findIndex(), forEach(), fillter(), keys(), reduce(), reduceRight(), some(), sort()
 
     // Looping Array Elements:منظورش پیمایشه : we can use "for" for looping items of an array or Array.forEach() method
+
+    //################################################################################################################################################################################################################################################
+
+    //Type 5: JS Object : For your early happiness, I' sorry :) it's complex type alitle, 
+    // write in curly brace {}, each item(property) had a to option: name and value and sperate any item by comma
+    //definetion  Objects in JS
+    // in world anyyyy thing(object) had atleast a property for describe appearance and a method for describe its job like:
+    // our hand is a thing(is an object): has some property such as color of ur hand, size of it and etc, so I say my color hand is yellow, my hand had a big size(it's like define a variable and apply value for it:) : myHand = {color="yellow", size="big"} and u see an object, any of thid pair we called name:value
+    // addition this property, i can do some thing(act) with my hand, I can writte, drew, move things by my hands, in JS we called them method or function
+
+    //Four Ways to Create an Object in JS: 
+    //1) Using an Object Literal: inside a {} set some items(in Object caled property) with name and thier value:
+    var obj1 = {
+            title: "aricle",
+            subject: "reading",
+            auther: "Marzyah",
+            publish: 1000,
+            discription: "it's for life"
+        } // now we create and defind an Object by literal way
+
+    //2) Using the JavaScript Keyword new: 
+    var obj2 = new Object();
+    obj2.title = "article";
+    obj2.subject = "reading";
+    obj2.auther = "Marzyah";
+    obj2.publish = 1000;
+    obj2.discription = "it's for life";
+    //obj1 and  obj2 do exactuly same, but this new keyword make complexity so it's better don't use it.
+
+    //3) Define an object constructor, and then create objects of the constructed type.: for later mabye (unknown)
+    //4) in EcmaScript5 using Object.create()
+
+    var obj3 = obj2; // it's so important, now obj3 not difference with obj2, obj3 not a copy of obj2, they atre same so anyyy change in obj3 apply on obj2 too
+    console.log(typeof(obj3)) // object
+    console.log(obj3.title) //article
+    obj3.publish = 200;
+    console.log(obj2.publish) //200
+
+    // so object can be change, they are mutable cuse we don't know them by value, we know by reference :))) (unknown) 
+
+    //object Property JS: most important in Objct JS, can be changed add delete but are read only:), 
+    // accessing to property of an object:
+    console.log(obj1.title); //way one: objectName.property // article
+    console.log(obj1["title"]); // way 2: objectNsme["property"]// article
+    // console.log(obj1[title]); //way 3 : objectName[expression] // unknown
+    var params;
+    var finalytTxt = ""; // if don't evaluate "" to this var, befor our result add undefined...
+    for (params in obj2) {
+        finalytTxt += obj2[params]
+    }
+    console.log(finalytTxt) //articlereadingMarzyah200it's for life
+
+    // add new property:
+    obj2.favRole = "Batist";
+    console.log(obj2.title + " " + obj2.favRole) // article Batist
+
+    // delete an exiting property: The delete operator should not be used on predefined JavaScript object properties. It can crash your application:)))))
+    delete obj2.publish; // delete is just for properties of Object not for variable or function
+    console.log(obj2.publish) // undefine // deleted:)
+
+    obj2.publish = 500;
+    console.log(obj2.publish)
+
+    //Property Attributes: when we say property consist of name:value, this value is an attribute for our property, also we have some attribute else: enumerable, configurable, and writable
+    // in this four attributes: enumerable, configurable, writable and value, just value can be changed the three ones are readable just مگر اینکه be writable too
+    //( ECMAScript 5 has methods for both getting and setting all property attributes)
+
+    //Prototype Object in JS: JavaScript objects inherit the properties of their prototype.
+
+    // The delete keyword does not delete inherited properties, but if you delete a prototype property, it will affect all objects inherited from the prototype.
+
+    //Methods Object JS:  Methods are functions stored as object properties. یکی از انواع پراپرتی های آبجکت ها که به صورت فانکشن تعریف میشه رو متد میگیم
+
+    //which property that define with function defenition is a method ==> person = {name1:"value1", name2:"value2", name3:function() {return this.name1 + this.name2}}
+    // keyword "this" use for  accessing to values of function:)
+    //methods in JS dosen't just this, we learned some mthods more in String type like splice() method()
+
+    var obj4 = {
+            title4: "title",
+            des4: "desc",
+            isMethod: function() {
+                return this.title4 + " " + this.des4
+            }
+        }
+        //accessing to methods: objectName.methodName() // if forget () return an typeof (object) like constractur
+    console.log(obj4.isMethod()) // title desc
+
+    var obj5 = {
+            thisIsAMethod: function() {
+                return "this is obj2 title:" + this.obj4.title + "also obj3" + this.obj3.thtiel + "too"
+            }
+        }
+        // console.log(obj4.thisIsAMethod()) // Uncaught TypeError: obj4.thisIsAMethod is not a function/// so we cn't use "this" for out of our object :))))
+
+    //Adding new method(function) to our object: 
+    obj2.addNewMethod = function() {
+        return "This is our uther: " + this.auther + ", of our " + this.title
+    }
+    console.log(obj2.addNewMethod()) // This is our uther: Marzyah, of our article
+
+    //convert object to array: 1) use Object.values(), actully it is another way to show object prorpeties in JS
+    var convertObjToArr = Object.values(obj2)
+    console.log(convertObjToArr) // Array(7) [ "article", "reading", "Marzyah", "it's for life", "Batist", 500, addNewMethod() ] // stringify don't show methods
+    console.log(typeof(convertObjToArr)) // object yet:)
+        // convert to array: 2 ) using JSON.stringify(), stringified(به صورت رشته)و 
+    var convertToArryOfJson = JSON.stringify(obj2); // string following the JSON
+    console.log(convertToArryOfJson) //{"title":"article","subject":"reading","auther":"Marzyah","discription":"it's for life","favRole":"Batist","publish":500}
+        // so for return function as an array by stringify, we should chsnge the function to string before
+    obj2.addNewMethod = obj2.addNewMethod.toString();
+    var convertMethodtoString = JSON.stringify(obj2);
+    console.log(convertMethodtoString) // {"title":"article","subject":"reading","auther":"Marzyah","discription":"it's for life","favRole":"Batist","publish":500,"addNewMethod":"function() {\n        return \"This is our uther: \" + this.auther + \", of our \" + this.title\n    }"} comapre with 874 line
+
+    var convertArr = ["value1", "value2", "value3"]
+    var convertArrToJson = JSON.stringify(convertArr);
+    console.log(convertArrToJson) //["value1","value2","value3"] write there cuses Array is object always
+
+    //convert Dates to Json 
+    var aboutDate = {
+        name: "date",
+        today: new Date()
+    }
+    var aboutDateToJson = JSON.stringify(aboutDate);
+    console.log(aboutDateToJson) // {"name":"date","today":"2020-11-19T10:18:52.886Z"}
+
+    //in Objects we can use get and set instead of function
+    var obj7 = {
+        name: "car",
+        color: "black",
+        nickName: "",
+        set nameSet(nameSet) {
+            this.nickName = nameSet
+        },
+        get driver() {
+            return "Marzyah" + this.nickName + " drove the " + this.color + " " + this.name
+        },
+    }
+    obj7.nickName = "Pro"
+    console.log(obj7.driver) // MarzyahPro drove the black car
+
+    //so diff between of get and function is about call them: objectName.geterName , objectName.functionName()
+
+    ///Why Using Getters and Setters? 
+
+    // It gives simpler syntax
+    // It allows equal syntax for properties and methods
+    // It can secure better data quality 
+    // It is useful for doing things behind-the-scenes // unknown
+
+    //constractor : different way to create objectType
+    // oh oh it's a good idea
+    // untill now we create object by literal(like string, boolean, number that we defined by literal==> var boolByLiteral = true, var stringByLiteral = "this is a string", var numByLiteral = 50)
+    // but if we don't want use literal we use "new" keyword for other Type, but not for object
+    //for object use constractur function
+    //when we want have an object that we used it for many times(we have a hand object with some property but this property are diff for different ppl, for marzyah, for sina, for niyan and blablaa....)
+    //so we used constructor function
+    function Hand(owner, color, size) { // function Hand() is an object constructor (write it by uppercase first letter is true)
+        this.owner = owner
+        this.color = color;
+        this.size = size;
+    }
+    //now we want use that for differnt ppl
+
+    var marzyaHand = new Hand("marzyah", "yellow", "big"); // calling constractor function(Hand)
+    var niyanHand = new Hand("Niyan", "white", "small");
+    console.log(niyanHand.owner + " hands is " + niyanHand.color + niyanHand.size + " but " + marzyaHand.owner + " hans is " + marzyaHand.color) // Niyan hands is whitesmall but marzyah hans is yellow
+
+    //add new property and method to constractor function(it's not like literal object create)
+    // the new property should add to original constructor function 
+    function Hand(owner, color, size) {
+        this.owner = owner
+        this.color = color;
+        this.size = size;
+        this.fat = "yes"
+    }
+
+    console.log(niyanHand.fat) // yes
+    console.log(marzyaHand.fat) //yes
+
+    //constructore can be consist of methods too (function)
+    function Hand(owner, color, size) {
+        this.owner = owner
+        this.color = color;
+        this.size = size;
+        this.fat = "yes"
+        this.drwing = function() {
+            return this.owner + " can't drewing withe her " + this.color + " hands."
+        }
+    }
+    console.log(marzyaHand.drwing()) // marzyah can't drewing withe her yellow hands.
+
+    //add Mehods to constructor :: it's like add method to literal objrcts
+
+    function Hand(owner, color, size) {
+        this.owner = owner
+        this.color = color;
+        this.size = size;
+        this.fat = "yes";
+        this.drwing = function() {
+            return this.owner + " can't drewing withe her " + this.color + " hands."
+        };
+        this.changeColor = function(newColor) {
+            this.color = newColor;
+        };
+    }
+    marzyaHand.changeColor("brwon");
+    console.log(marzyaHand.owner + " can drwing with " + marzyaHand.color) // marzyah can drwing with brwon
+        // for million times I sayyyy: 
+        //JavaScript has built-in constructors for native objects:
+        //var object = new Object(); // A new Object object ==> use primitive type(using literal) is so much faster: var object = {name1:value, name2:value2} ==>> new object
+        //var string = new String(); // A new Object string ==> use primitive type(using literal) is so much faster: var string = "name1" ==>> new primitive string
+        //var number = new Number(); // A new Object number ==> use primitive type(using literal) is so much faster: var number = 10  ==>> new primitive number
+        //var boolean = new Boolean(); // A new Object boolean ==> use primitive type(using literal) is so much faster: var boolean = true  ==>> new primitive boolean
+        //var array = new Array(); // A new Object array ==> use primitive type(using literal) is so much faster: var array = [name1, name2]  ==>> new object array
+        //var function = new Function(); // A new Object function ==> use primitive type(using literal) is so much faster: function Name() {} ==>> new  object function
+        //var regExp = new RegExp(); // A new  RegExp  object ==> use primitive type(using literal) is so much faster: /()/ (unknown yet) ===>> new regexp object
+        // var date = new Date();      // A new Date object
+        //he new keyword cannot be used on Math becuse Math is a global object
+
+    //Prototype in Object
+    // In JS All JavaScript objects inherit properties and methods from a prototype: (:))(https://www.w3schools.com/js/js_object_prototypes.asp)
+    //I know something :)
+    // we can use prototype for add method or property to constructor function
+    Hand.prototype.colorOfNails = "red";
+    console.log(marzyaHand.colorOfNails) //red
+
+    Hand.prototype.appreance = function() {
+        return this.owner + " hands are " + this.color + " with " + this.colorOfNails + " nails."
+    }
+    console.log(marzyaHand.appreance()) //marzyah hands are brwon and red nails
+
+    //Type 6 :
+    //Undefined: variable without a vlue, has the value undefined and also type undefined
+    //also an variable with lue of undefined is undefined
+    var undefinedVar;
+    var undefinedVar1 = undefined;
+    undefinedVar2 = undefined;
+    console.log(undefinedVar, undefinedVar1, undefinedVar2) //undefined undefined undefined
+        //an object can be change by a n undefined:
+    var obj555 = {
+        name1: "value1",
+        name2: "value2"
+    }
+    obj555 = undefined;
+    console.log(obj555) //undefined
+    console.log(typeof(obj555)) //undefined
+        ////Empty value is different with undefined
+    var empetyVar = ""; // type is string and value is "" not undefined
+
+    //Type 7:
+    //Null : so type of Null is object:) but value of it is null meaning this variable or anything dose'nt exit
+    console.log(null) //null
+
+    //we can change an object to null:
+    var obj666 = {
+        name1: "value1",
+        name2: "value2"
+    };
+    obj666 = null;
+    console.log(obj666);
+    console.log(typeof(obj666)) // null
+    console.log(variable2000) // object
+
+    //for the latter cases:
+    //result of typeof of: object, array and null is object
+    // for function is function
 </script>
