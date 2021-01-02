@@ -278,6 +278,14 @@
 
     console.log("hellooo" < 5); //false unknown:(
     console.log(5 < "hello"); //false
+    var qqqq = "10";
+    var qqqqq = 10;
+    console.log("_____________________________________")
+    console.log(typeof(qqqq) !== typeof(qqqqq)); //true // it's about value or(plz note this or) type
+    console.log(typeof(qqqq) != typeof(qqqqq)) // true // it's just about value
+    console.log(qqqq !== qqqqq); //true
+    console.log(qqqq != qqqqq); //false
+
 
     // console.log("5" < 3n); //false
     // console.log("3" < 5n);         // true
@@ -393,6 +401,12 @@
     name2 = new String("Marza");
     console.log(x == name2) // true, about value
     console.log(x === name2) // false, is about type
+        //also
+    var xx = "10";
+    var xxx = 10;
+    console.log("###########")
+    console.log(xx == xxx); //true
+    console.log(xx === xxx); //false
 
     //Objects cannot be compared:
     var myObjectString = new String("MARZA");
@@ -443,6 +457,7 @@
     //every things in substring is like slice, but  substring can not accept negative value, and no matter if endIndex be less than startIndex and substring treat like that startIndex and endIndex will be changed(swapped)
     // and Diff with substr is that substr don't have endIndex it had length instead
     var findBySubstring = myIndexOf.substring(5) //are a student, I hope free soon as soon
+    var findBySubstring10 = myIndexOf.substring(5).toUpperCase(); //ARE A STUDENT, I HOPE FREE SOON AS SOON
     var findBySubstring1 = myIndexOf.substring(44); //empty string, it's equal to endIndex of our String
     var findBySubstring2 = myIndexOf.substring(5, 10) //are a
     var findBySubstring3 = myIndexOf.substring(10, 5) // are a two arg had ba swapped, another diff with slice
@@ -772,6 +787,17 @@
 
     //################################################################################################################################################################################################################################################
 
+    //so in during new course I learned new subjects to:
+    const newCoursArray = ["marzi", "niyan", "sina"];
+    newCoursArray[3] = "nazira";
+    console.log(newCoursArray) //Array(4) [ "marzi", "niyan", "sina", "nazira" ]
+        // newCoursArray = []; // it's wrong cuse it's a const and we just can add, remove, alter items we can't resigned it.
+        // console.log(newCoursArray) // Uncaught TypeError: invalid assignment to const 'newCoursArray'
+
+    var newCoursArray1 = ["item1", "item2", "item3"];
+    newCoursArray1 = []; // we can resigning var one
+    console.log(newCoursArray1) //Array []
+
     //Type 5: JS Object : For your early happiness, I' sorry :) it's complex type alitle, 
     // write in curly brace {}, each item(property) had a to option: name and value and sperate any item by comma
     //definetion  Objects in JS
@@ -908,6 +934,82 @@
     obj7.nickName = "Pro"
     console.log(obj7.driver) // MarzyahPro drove the black car
 
+    //it's about new course too about objects:
+    const newCoursObj = {
+        firstName: "Marzi",
+        lastName: "Hoseini",
+        habbits: ["Books", "Codeing", "movie"],
+        address: {
+            city: "Marivan",
+            street: "jjjj",
+            ID: 20,
+        }
+    }
+    console.log(newCoursObj) //Object { firstName: "Marzi", lastName: "Hoseini", habbits: (3) […], address: {…} }
+    console.log(newCoursObj.lastName + ', ' + newCoursObj.habbits[1], newCoursObj.address.city) // Hoseini, Codeing Marivan
+        //another way to show items of newCoursObj:
+    const {
+        lastName,
+        habbits,
+        address
+    } = newCoursObj;
+    console.log(lastName, habbits[1], address.city) //Hoseini Codeing Marivan
+
+    // actually we can write objects in an array
+    const newCoursArray2 = [{
+        id: 1,
+        name: "marzi",
+        habits: "She is so crazy girl"
+    }, {
+        id: 2,
+        name: "nian",
+        habits: "She just is 10"
+    }, {
+        id: 3,
+        name: "sina",
+        habits: "he is a cool guy"
+    }, {
+        id: 4,
+        name: "erfan",
+        habits: "his name is erfan:)"
+    }]
+    console.log(newCoursArray2) //Array(4) [ {…}, {…}, {…}, {…} ] this curly brace consist of thier values
+    console.log(newCoursArray2[3].name) // erfan
+
+    //Now this newCoursArray2 is like a JSON format but actullay not really same so we can use a method that we learned before
+    const newCoursArray2ToJson = JSON.stringify(newCoursArray2)
+    console.log(newCoursArray2ToJson) // [{"id":1,"name":"marzi","habits":"She is so crazy girl"},{"id":2,"name":"nian","habits":"She just is 10"},{"id":3,"name":"sina","habits":"he is a cool guy"},{"id":4,"name":"erfan","habits":"his name is erfan:)"}]
+        // so u can see diff between JSON format and this objects in array: the key write in qout 
+
+    //it's get be so amazing with this below tips:
+    // Accessing objects in Array newCoursArray2 in with For
+    for (let i = 0; i <= newCoursArray2.length; i++) {
+        console.log(newCoursArray2[i]) //
+            //  Object { id: 1, name: "marzi", habits: "She is so crazy girl" }
+            // Object { id: 2, name: "nian", habits: "She just is 10" }
+            // Object { id: 3, name: "sina", habits: "he is a cool guy" }
+            // Object { id: 4, name: "erfan", habits: "his name is erfan:)" }
+            // console.log(newCoursArray2[i]) // commit the up console.log first
+            // marzi
+            // nian 
+            // sina 
+            // erfan
+
+    }
+
+    // and a better way: 
+    for (let item of newCoursArray2) {
+        console.log(item.name)
+            // undefined  //n I think this happend cause the item not has value for first time:)
+            // marzi
+            // nian
+            // sina
+            // erfan
+    }
+
+    //so so so different way: 
+    //forEach, map, filter
+
     //so diff between of get and function is about call them: objectName.geterName , objectName.functionName()
 
     ///Why Using Getters and Setters? 
@@ -1029,9 +1131,52 @@
     obj666 = null;
     console.log(obj666);
     console.log(typeof(obj666)) // null
-    console.log(variable2000) // object
+        // console.log(variable2000) // object
 
     //for the latter cases:
     //result of typeof of: object, array and null is object
     // for function is function
+
+
+    //in if estatment plzzzz care the order of conditions :)))
+
+
+    //now that the DATA TYPE are done, it turn of var, let and const...
+    // it's consist of w3school and MDN site and two course on youtube
+
+    function foo() {
+        var x12 = 12;
+
+        function boo() {
+            var x13 = 13;
+            console.log("kkkkkkkkkkkkkkkkkkkkkk")
+            console.log(x12)
+            console.log(x13)
+        }
+    }
+    console.log("kkkkkkkkkkkkkkkkkkkkkk")
+        // console.log(xs
+
+    function foo() {
+        var x10 = 10;
+
+    }
+
+    function foo0() {
+        var x0 = 1;
+
+        function bar() {
+            var y0 = 2;
+            console.log(x0); // 1 (function `bar` closes over `x`)
+            console.log(y0); // 2 (`y` is in scope)
+        }
+        bar();
+    }
+    console.log('$$$$$$$$$$$$$$$')
+    console.log(x10)
+
+    // OK now I know something about function, but I nedd to sutdy more bout them
+    // What is the DOM????????????????
+    //DOM is stand for Document Object Model :|||
+    //DOM is an interface between our HTML and XML code and browser, that show how to read this codes by brwoser
 </script>
