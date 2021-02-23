@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="output">HTML DOM</div>
+    <div> <input type="text" id="btn" onchange='inputTxt()'></input>
+    </div>
+</body>
+<script>
+    var output = document.getElementById('output');
+
+    function inputTxt() {
+        output.innerText = document.getElementById('btn').value;
+
+    }
+
+    // OK now I know something about function, but I nedd to sutdy more bout them
+    // What is the DOM????????????????
+    //DOM is stand for Document Object Model :|||
+    //DOM is an interface between our HTML and XML code and browser, that show how to read this codes by browser
+    // I wrote those 4 paragraph in 2 moth ago!!!!, go to complete our knowledge
+    // DOM stand for Document Object Model, and no matter which kind of document, any type can be a DOM(called core DOM)
+    // but DOM HTML is just for HTML Document Object Model for: 
+    // a) define HTML elements as an object
+    // b) The properties of all elements
+    // c) The methods to access all HTML element
+    // d) The events for(change(remove, add, alter)) all HTML element
+    // so *******With the HTML DOM, JavaScript can access and change all the elements of an HTML document.*******
+    // we said DOM is a programming interface for interactive JS, so what means Programming Interface?
+    // means: properties and Methods of each objects and also in DOM any element in a HTML document is an object.
+    // and Property is a value that can get or set And Method is an action that can do
+    // we have an necessary object DOM: document
+    // document object is necessary cause for access to anyyy element of our HTML document we should  always use(start by) document for get them
+    // ****Finding HTML Elements:***** :::
+    // 1) Finding HTML elements by id: document.getElementById(idNAme in html doc)
+    // 2) Finding HTML elements by class name: document.getElementsByClassName(classname)
+    // 3) document.getElementsByName(name)
+    // 4)Finding HTML elements by tag name: document.getElementsByTagName(tagName)
+    // 5) document.getElementsByTagNameNS(tagName1, tagName2,..)
+    // 6) Finding HTML elements by CSS selectors: for finding all html element that match a specified selector css(id, class, types,...) using: querySelectorAll
+    // document.querySelectorAll("css Selector") 
+    // 7)    Finding HTML elements by HTML object collections(document.anchors, document.body, document.documentElement, document.embeds, document.forms, document.head, document.images, document.links, document.scripts, document.title)
+    // ****Changing HTML Elements:***
+    //     element.innerHtml = new HTML content
+    //     element.attribute = new value
+    // element.style.property = new style
+    // element.setAttribute(attribute, value) ***this is a method***
+    // Adding and Deleting element: 
+    // document.createElement(element), document.removeChild(element), document.appendChild(element)**for add new element), document.replaceChild(new, old), document.write(text)
+    // *****Adding Event Handlers**** 
+    // document.getElementById(idName).onclick = function(){code}
+    // so we can get any tag in html document by document.tagName cause DOM change them to an object: document.title or .anchor or .body and ...
+</script>
+
+</html>
